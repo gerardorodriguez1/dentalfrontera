@@ -6,9 +6,9 @@ use dentalfrontera;
 -- TABLA USUARIOS CONSULTORIO
 create table usuarios(
 	id int(11) not null,
-    usuario varchar(50) not null,
-    contraseña varchar(50) not null,
-    email varchar(50) not null 
+    username varchar(20) not null,
+    password varchar(60) not null,
+    correo varchar(50) not null 
 );
 
 alter table usuarios
@@ -19,6 +19,8 @@ alter table usuarios
 	MODIFY id int(11) not null auto_increment, auto_increment = 2;
     
 describe usuarios;
+
+SELECT * FROM usuarios;
 
 -- TABLA DE PACIENTES QUE PIDEN CITA POR SITIO WEB
 create table pacientes_citas(

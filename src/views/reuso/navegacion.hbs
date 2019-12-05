@@ -1,29 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="/">DENTAL FRONTERA</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
+    <ul class="navbar-nav ml-auto">
+      {{#if user}}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+          Opciones
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="/pacientes/add">Nuevo paciente</a>
+          <a class="dropdown-item" href="/pacientes">Pacientes</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      <li class="nav.item">
+        <a href="/perfil" class="nav-link">PERFIL</a>
+      </li>
+      <li class="nav-item">
+        <a href="/logout" class="nav-link">CERRAR SESION</a>
+      </li>
+      {{else}}
+        <li class="nav-item">
+          <a href="/signin" class="nav-link">Iniciar sesion</a>
+        </li>
+        <li class="nav-item">
+          <a href="/signup" class="nav-link">Registrarse</a>
+        </li>
+      {{/if}}
+      
     </ul>
+  </div>
   </div>
 </nav>
